@@ -1,4 +1,8 @@
 import pgzrun
+from pgzero.actor import Actor
+from pgzero.game import screen
+from pgzero.keyboard import keyboard
+from pygame.locals import Rect
 
 p3 = Actor('p3_stand')
 p3.images = ['p3_walk01', 'p3_walk02', 'p3_walk03', 'p3_walk04', 'p3_walk05', 'p3_walk06', 'p3_walk07', 'p3_walk08', 'p3_walk09', 'p3_walk10']

@@ -12,13 +12,18 @@ class Book:
 class Novel (Book):
     def __init__(self, title, author, price, genre):
         super().__init__(title, author, price)
-        self.genre = genre
+        self._genre = genre
 
     def __str__(self):
-        return f"{super().__str__()} -Genre: {self.genre}"
+        return f"{super().__str__()} -Genre: {self._genre}"
 
     def get_title(self):
         return self._title
+
+    @property
+    def genre(self):
+        return self._genre
+
 
 novel = Novel("The Da Vinci Code", "Dan Brown", 24.50, "Mystery")
 print(novel.get_title())
@@ -50,11 +55,11 @@ class BookShelf:
     def borrow_book(self, title):
         # consider multiply books with the same title
         for book in self.books:
-            if book._title.lower() == title.lower() and not book._borrowed:
+            if book.title.lower() == title.lower() and not book._borrowed:
                 book._borrowed = True
-                return f"You borrowed {book._title}"
-            elif book._title.lower() == title.lower() and book._borrowed:
-                return f" {book._title}is already borrowed"
+                return f"You borrowed {book.title}"
+            elif book.title.lower() == title.lower() and book._borrowed:
+                return f" {book.title}is already borrowed"
 
         return "Not found"
 
