@@ -14,4 +14,4 @@ def create_ec2_instance():
 
 create_ec2_instance()
 
-// replace by the terrform code
+# replace by the terrform code
